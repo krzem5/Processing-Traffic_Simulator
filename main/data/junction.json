@@ -1,0 +1,291 @@
+{
+  "conns": {
+    "4": {"300": 50},
+    "6": {"300": 50},
+    "8": {"300": 50},
+    "9": {"299": 50}
+  },
+  "board": [
+    {
+      "from": {
+        "x": 1829,
+        "y": 1200
+      },
+      "to": {
+        "x": 2429,
+        "y": 827
+      },
+      "id": 0,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 3,
+        "end": 5
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 554,
+        "y": 1340
+      },
+      "to": {
+        "x": 1294,
+        "y": 1257
+      },
+      "id": 2,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 9,
+        "end": 3
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1590,
+        "y": 1496
+      },
+      "to": {
+        "x": 1889,
+        "y": 2115
+      },
+      "id": 4,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 3,
+        "end": -1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 2429,
+        "y": 827
+      },
+      "to": {
+        "x": 3106,
+        "y": 1036
+      },
+      "id": 5,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 0,
+        "end": 6
+      },
+      "lights": {
+        "exist": true,
+        "min": 30,
+        "max": 60,
+        "cross": 25
+      },
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 3106,
+        "y": 1036
+      },
+      "to": {
+        "x": 3651,
+        "y": 1032
+      },
+      "id": 6,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 5,
+        "end": -1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1533,
+        "y": 961
+      },
+      "to": {
+        "x": 1450,
+        "y": 188
+      },
+      "id": 7,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 3,
+        "end": 1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1450,
+        "y": 188
+      },
+      "to": {
+        "x": 1787,
+        "y": 98
+      },
+      "id": 1,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 7,
+        "end": 8
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1787,
+        "y": 98
+      },
+      "to": {
+        "x": 2430,
+        "y": 553
+      },
+      "id": 8,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": 1,
+        "end": -1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 355,
+        "y": 669
+      },
+      "to": {
+        "x": 554,
+        "y": 1340
+      },
+      "id": 9,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": -1,
+        "end": 2
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "j-connections": [
+        {
+          "a": 899,
+          "b": 299,
+          "w": 50
+        },
+        {
+          "a": 1500,
+          "b": 900,
+          "w": 50
+        },
+        {
+          "a": 1500,
+          "b": 299,
+          "w": 100
+        },
+        {
+          "a": 2100,
+          "b": 1499,
+          "w": 50
+        },
+        {
+          "a": 2100,
+          "b": 900,
+          "w": 50
+        },
+        {
+          "a": 899,
+          "b": 1499,
+          "w": 50
+        },
+        {
+          "a": 1500,
+          "b": 2099,
+          "w": 50
+        },
+        {
+          "a": 2100,
+          "b": 299,
+          "w": 50
+        },
+        {
+          "a": 300,
+          "b": 1499,
+          "w": 50
+        },
+        {
+          "a": 300,
+          "b": 900,
+          "w": 50
+        },
+        {
+          "a": 300,
+          "b": 2099,
+          "w": 50
+        },
+        {
+          "a": 899,
+          "b": 2099,
+          "w": 50
+        }
+      ],
+      "pos": {
+        "x": 1562,
+        "y": 1229
+      },
+      "angle": 39,
+      "sides": 4,
+      "id": 3,
+      "radius": 380,
+      "type": "junction",
+      "connections": [
+        4,
+        2,
+        7,
+        0
+      ],
+      "lights": {
+        "300": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1500": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "899": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "2100": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}

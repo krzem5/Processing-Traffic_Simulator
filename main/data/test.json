@@ -1,0 +1,243 @@
+{
+  "conns": {
+    "3": {
+      "3": 50,
+      "4": 50
+    },
+    "4": {
+      "3": 50,
+      "4": 50,
+      "5": 50
+    },
+    "5": {
+      "1": 50,
+      "2": 50
+    },
+    "6": {
+      "0": 50,
+      "1": 50,
+      "2": 50
+    }
+  },
+  "board": [
+    {
+      "from": {
+        "x": 1814,
+        "y": 1612
+      },
+      "to": {
+        "x": 1889,
+        "y": 767
+      },
+      "id": 2,
+      "type": "road",
+      "lanesB": 2,
+      "connections": {
+        "start": 1,
+        "end": 0
+      },
+      "lights": {"exist": false},
+      "lanesA": 2
+    },
+    {
+      "from": {
+        "x": 2083,
+        "y": 580
+      },
+      "to": {
+        "x": 2610,
+        "y": 625
+      },
+      "id": 3,
+      "type": "road",
+      "lanesB": 2,
+      "connections": {
+        "start": 0,
+        "end": -1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1896,
+        "y": 386
+      },
+      "to": {
+        "x": 1918,
+        "y": 66
+      },
+      "id": 4,
+      "type": "road",
+      "lanesB": 3,
+      "connections": {
+        "start": 0,
+        "end": -1
+      },
+      "lights": {"exist": false},
+      "lanesA": 1
+    },
+    {
+      "from": {
+        "x": 1103,
+        "y": 1707
+      },
+      "to": {
+        "x": 1630,
+        "y": 1767
+      },
+      "id": 5,
+      "type": "road",
+      "lanesB": 1,
+      "connections": {
+        "start": -1,
+        "end": 1
+      },
+      "lights": {"exist": false},
+      "lanesA": 2
+    },
+    {
+      "from": {
+        "x": 1769,
+        "y": 2453
+      },
+      "to": {
+        "x": 1785,
+        "y": 1951
+      },
+      "id": 6,
+      "type": "road",
+      "lanesB": 2,
+      "connections": {
+        "start": -1,
+        "end": 1
+      },
+      "lights": {"exist": false},
+      "lanesA": 3
+    },
+    {
+      "j-connections": [],
+      "pos": {
+        "x": 1893,
+        "y": 577
+      },
+      "angle": 46,
+      "sides": 4,
+      "id": 0,
+      "radius": 270,
+      "type": "junction",
+      "connections": [
+        2,
+        -1,
+        4,
+        3
+      ],
+      "lights": {
+        "298": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1502": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "299": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1501": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1500": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "2101": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "2100": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "j-connections": [],
+      "pos": {
+        "x": 1800,
+        "y": 1782
+      },
+      "angle": 50,
+      "sides": 4,
+      "id": 1,
+      "radius": 240,
+      "type": "junction",
+      "connections": [
+        6,
+        5,
+        2,
+        -1
+      ],
+      "lights": {
+        "297": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "298": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "299": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1501": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "1500": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "898": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        },
+        "899": {
+          "red": 30,
+          "orange": 5,
+          "green": 10,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}
