@@ -35,7 +35,7 @@ class Car {
   int LANE_PATH_DIFF_POINT_BUFFOR=10;
   int COLLISION_LINE_CONSTRAIN_BUFFOR=1;
   color[] colors={#101010, #a1a1a1, #ffffff, #0074fd, #e2e2e2, #eb0032, #59ae00, #f97b1f, #c9ae5d, #ffeb00};// https://www.driving.co.uk/news/revealed-popular-car-colours-2017/
-  int[] color_weights={21, 20, 19, 17, 10, 10, 3, 3, 2, 1};// https://www.driving.co.uk/news/revealed-popular-car-colours-2017/
+  int[] color_weights={21, 20, 19, 17, 10, 10, 3, 3, 2, 1};
   boolean DETAIL_CAR_MODEL=false;
 
 
@@ -224,7 +224,7 @@ class Car {
     }
     if (this.changing_lane==true) {
       return this.lane_change.copy();
-    } else { 
+    } else {
       return new PVector(0, 0);
     }
   }
@@ -315,7 +315,7 @@ class Car {
       this.lane_change=null;
       this.right_lane=false;
       if (diff(this.path.get(this.target_i-1).pos, this.l_target.pos)<this.LANE_PATH_DIFF_POINT_BUFFOR) {
-        this.l_target_i++;        
+        this.l_target_i++;
         this.l_target=this.l_path.get(this.l_target_i);
         this.curr_r_lgt=null;
         if (this.l_target.lane!=null) {

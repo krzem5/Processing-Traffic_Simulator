@@ -512,7 +512,7 @@ class Junction {
   void rm_r(Road r) {
     for (JPoint p : this.side_c_points) {
       if (p.r_in==r) {
-        p.disconnect(); 
+        p.disconnect();
         this.create_edit_points();
         return;
       }
@@ -533,12 +533,12 @@ class Junction {
 
 
   void set_connections() {
-    int ID; 
+    int ID;
     for (int i=0; i<this.sides; i++) {
       if (i==this.conns.size()) {
         return;
       }
-      ID=this.conns.getInt(i); 
+      ID=this.conns.getInt(i);
       if (ID==-1) {
         continue;
       }
@@ -546,8 +546,8 @@ class Junction {
         if (r.ID!=ID) {
           continue;
         }
-        this.side_c_points.get(i).r_in=r; 
-        this.side_c_points.get(i).add_pos(0, 0); 
+        this.side_c_points.get(i).r_in=r;
+        this.side_c_points.get(i).add_pos(0, 0);
         break;
       }
     }
@@ -560,9 +560,9 @@ class Junction {
   ArrayList<PVector> get_side(Road r) {
     for (int i=1; i<=this.sides; i++) {
       if (this.side_c_points.get(i-1).r_in==r) {
-        ArrayList<PVector> l=new ArrayList<PVector>(); 
-        l.add(this.side_points.get(i-1)); 
-        l.add(this.side_points.get(i%this.sides)); 
+        ArrayList<PVector> l=new ArrayList<PVector>();
+        l.add(this.side_points.get(i-1));
+        l.add(this.side_points.get(i%this.sides));
         return l;
       }
     }
@@ -636,8 +636,8 @@ class Junction {
   void draw() {
     translate(-this.ENGINE.OFF_X, -this.ENGINE.OFF_Y);
     scale(1/this.ENGINE.ZOOM_OUT);
-    strokeWeight(2); 
-    stroke(255); 
+    strokeWeight(2);
+    stroke(255);
     for (int i=1; i<=this.sides; i++) {
       line(this.side_points.get(i-1).x, this.side_points.get(i-1).y, this.side_points.get(i%this.sides).x, this.side_points.get(i%this.sides).y);
     }
@@ -655,11 +655,11 @@ class Junction {
       }
     }
     if (this.highlight==true) {
-      fill(230, 30, 40); 
-      noStroke(); 
+      fill(230, 30, 40);
+      noStroke();
       circle(this.pos.x, this.pos.y, this.ENGINE.POS_DRAG_RADIUS*2);
     }
-    if (this.highlight==false&&this.ENGINE.DRAGGING_OBJECT==1) {      
+    if (this.highlight==false&&this.ENGINE.DRAGGING_OBJECT==1) {
       for (JPoint p : this.side_c_points) {
         p.draw();
       }
@@ -669,8 +669,8 @@ class Junction {
   }
   void draw_roadmap() {
     if (this.editing_points==true||this.weighting_points==true) {
-      this.editing_points=false; 
-      this.ENGINE.EDITING_JUNCTION=false; 
+      this.editing_points=false;
+      this.ENGINE.EDITING_JUNCTION=false;
       this.highlight=true;
     }
     translate(-this.ENGINE.OFF_X, -this.ENGINE.OFF_Y);
@@ -682,20 +682,20 @@ class Junction {
       vertex(p.x, p.y);
     }
     endShape(CLOSE);
-    strokeWeight(2); 
-    stroke(255); 
+    strokeWeight(2);
+    stroke(255);
     for (int i=1; i<=this.sides; i++) {
       if (this.side_c_points.get(i-1).r_in==null) {
         line(this.side_points.get(i-1).x, this.side_points.get(i-1).y, this.side_points.get(i%this.sides).x, this.side_points.get(i%this.sides).y);
       } else {
-        ArrayList<PVector> l=this.side_c_points.get(i-1).r_in.get_bound_pos(this); 
-        PVector A=l.get(0), B=l.get(1), C=l.get(2); 
-        line(this.side_points.get(i-1).x, this.side_points.get(i-1).y, A.x, A.y); 
-        line(C.x, C.y, this.side_points.get(i%this.sides).x, this.side_points.get(i%this.sides).y); 
-        noStroke(); 
-        fill(255); 
-        this.draw_triangle_strip(A, B); 
-        noFill(); 
+        ArrayList<PVector> l=this.side_c_points.get(i-1).r_in.get_bound_pos(this);
+        PVector A=l.get(0), B=l.get(1), C=l.get(2);
+        line(this.side_points.get(i-1).x, this.side_points.get(i-1).y, A.x, A.y);
+        line(C.x, C.y, this.side_points.get(i%this.sides).x, this.side_points.get(i%this.sides).y);
+        noStroke();
+        fill(255);
+        this.draw_triangle_strip(A, B);
+        noFill();
         stroke(255);
       }
     }
@@ -703,20 +703,20 @@ class Junction {
     translate(this.ENGINE.OFF_X, this.ENGINE.OFF_Y);
   }
   void draw_triangle_strip(PVector s, PVector e) {
-    float cx=s.x/2+e.x/2; 
-    float cy=s.y/2+e.y/2; 
-    int d=int(dst(s.x, s.y, e.x, e.y)); 
-    float off=(d-max(int(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE), 1)*this.ENGINE.JUNCTION_TRIANGLE_SIZE)/2/max(int(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE), 1); 
-    float ang=ang(s.x, s.y, e.x, e.y); 
+    float cx=s.x/2+e.x/2;
+    float cy=s.y/2+e.y/2;
+    int d=int(dst(s.x, s.y, e.x, e.y));
+    float off=(d-max(int(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE), 1)*this.ENGINE.JUNCTION_TRIANGLE_SIZE)/2/max(int(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE), 1);
+    float ang=ang(s.x, s.y, e.x, e.y);
     for (int i=0; i<max(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE, 1); i++) {
-      float yoff=map(i, 0, max(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE, 1), -d/2, d/2)+this.ENGINE.JUNCTION_TRIANGLE_SIZE/2+off; 
-      PVector a=rot_point(cx, cy+yoff+(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/4, cx, cy, ang); 
-      PVector b=rot_point(cx, cy+yoff-(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/4, cx, cy, ang); 
-      PVector c=rot_point(cx+(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/3, cy+yoff, cx, cy, ang); 
-      beginShape(); 
-      vertex(a.x, a.y); 
-      vertex(b.x, b.y); 
-      vertex(c.x, c.y); 
+      float yoff=map(i, 0, max(d/this.ENGINE.JUNCTION_TRIANGLE_SIZE, 1), -d/2, d/2)+this.ENGINE.JUNCTION_TRIANGLE_SIZE/2+off;
+      PVector a=rot_point(cx, cy+yoff+(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/4, cx, cy, ang);
+      PVector b=rot_point(cx, cy+yoff-(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/4, cx, cy, ang);
+      PVector c=rot_point(cx+(float)this.ENGINE.JUNCTION_TRIANGLE_SIZE/3, cy+yoff, cx, cy, ang);
+      beginShape();
+      vertex(a.x, a.y);
+      vertex(b.x, b.y);
+      vertex(c.x, c.y);
       endShape(CLOSE);
     }
   }
@@ -724,16 +724,16 @@ class Junction {
 
 
   void fromJSON(JSONObject json) {
-    this.side_points=new ArrayList<PVector>(); 
-    this.side_c_points=new ArrayList<JPoint>(); 
-    this.l_edit_points=new ArrayList<JEditPoint>(); 
-    this.connections=new ArrayList<int[]>(); 
+    this.side_points=new ArrayList<PVector>();
+    this.side_c_points=new ArrayList<JPoint>();
+    this.l_edit_points=new ArrayList<JEditPoint>();
+    this.connections=new ArrayList<int[]>();
     this.edit_lines=new ArrayList<JEditLine>();
     this.LIGHTS=new LightObject(this.ENGINE, this);
-    this.pos=new PVector(json.getJSONObject("pos").getInt("x"), json.getJSONObject("pos").getInt("y")); 
-    this.radius=json.getInt("radius"); 
-    this.offset_angle=(float)json.getInt("angle")/(180/PI); 
-    this.sides=json.getInt("sides"); 
+    this.pos=new PVector(json.getJSONObject("pos").getInt("x"), json.getJSONObject("pos").getInt("y"));
+    this.radius=json.getInt("radius");
+    this.offset_angle=(float)json.getInt("angle")/(180/PI);
+    this.sides=json.getInt("sides");
     this.conns=json.getJSONArray("connections");
     JSONArray a=json.getJSONArray("j-connections");
     for (int i=0; i<a.size(); i++) {
@@ -744,18 +744,18 @@ class Junction {
       int[] nc={o.getInt("a"), o.getInt("b"), o.getInt("w")};
       this.connections.add(nc);
     }
-    this.ID=json.getInt("id"); 
+    this.ID=json.getInt("id");
     this.update_side_points(0);
     this.lgt_json=json.getJSONObject("lights");
   }
   JSONObject toJSON() {
-    JSONObject json=new JSONObject(); 
-    JSONArray conns=new JSONArray(); 
-    JSONObject pos=new JSONObject(); 
+    JSONObject json=new JSONObject();
+    JSONArray conns=new JSONArray();
+    JSONObject pos=new JSONObject();
     JSONArray j_conns=new JSONArray();
-    int i=0; 
+    int i=0;
     for (JPoint p : this.side_c_points) {
-      conns.setInt(i, (p.r_in!=null?p.r_in.ID:-1)); 
+      conns.setInt(i, (p.r_in!=null?p.r_in.ID:-1));
       i++;
     }
     int[] nc;
@@ -771,17 +771,17 @@ class Junction {
       c.setInt("w", nc[2]);
       j_conns.setJSONObject(i, c);
     }
-    pos.setInt("x", int(this.pos.x)); 
-    pos.setInt("y", int(this.pos.y)); 
-    json.setJSONObject("pos", pos); 
-    json.setInt("radius", this.radius); 
-    json.setInt("angle", int(this.offset_angle*(180/PI))); 
-    json.setInt("sides", this.sides); 
+    pos.setInt("x", int(this.pos.x));
+    pos.setInt("y", int(this.pos.y));
+    json.setJSONObject("pos", pos);
+    json.setInt("radius", this.radius);
+    json.setInt("angle", int(this.offset_angle*(180/PI)));
+    json.setInt("sides", this.sides);
     json.setJSONArray("connections", conns);
     json.setJSONArray("j-connections", j_conns);
     json.setJSONObject("lights", this.LIGHTS.to_json());
-    json.setInt("id", this.ID); 
-    json.setString("type", "junction"); 
+    json.setInt("id", this.ID);
+    json.setString("type", "junction");
     return json;
   }
 }
