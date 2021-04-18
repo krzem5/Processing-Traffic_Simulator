@@ -616,6 +616,9 @@ class Junction{
 					break;
 				}
 			}
+			if (a==null||b==null){
+				throw new NullPointerException();
+			}
 			l=new JunctionEditLine(this.engine,this,new PVector(a.pos.x,a.pos.y),new PVector(b.pos.x,b.pos.y),a,b,i,cn[2]);
 			this.edit_lines.add(l);
 		}

@@ -27,12 +27,7 @@ class InfoText{
 		s+="\n  Screen: x: "+str(mouseX)+" y: "+str(mouseY);
 		s+="\n  Editor: x: "+str((int)this.engine.MOUSE.x)+" y: "+str((int)this.engine.MOUSE.y);
 		s+="\nScroll: xd: "+str(this.engine.OFF_X)+" y: "+this.engine.OFF_Y;
-		if ((this.engine.MAX_ZOOM_OUT-this.engine.ZOOM_OUT+1)%1>0){
-			s+="\nZoom: "+str((this.engine.MAX_ZOOM_OUT-this.engine.ZOOM_OUT+1));
-		}
-		else{
-			s+="\nZoom: "+int(this.engine.MAX_ZOOM_OUT-this.engine.ZOOM_OUT+1);
-		}
+		s+="\nZoom: "+int(this.engine.MAX_ZOOM_OUT-this.engine.ZOOM_OUT+1);
 		s+="\nMode: "+(this.engine.EDITING_LIGHTS==true?"Editing Lights":(this.engine.EDITING_ROAD_INPUT==true?"Editing Input/Output Weights":(ep==1?"Editing Junction Connections":(ep==2?"Editing Junction Connection Weights":(this.engine.RUNNING==true?"Simulation":(this.engine.ROADMAP_VIEW==true?"View":"Edit"))))));
 		if (this.engine.ROADMAP_VIEW==true||this.engine.RUNNING==true){
 			s+="\nTrack Visible: "+(this.engine.LANE_LINES==true?"Yes":"No");

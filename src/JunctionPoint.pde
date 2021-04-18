@@ -26,6 +26,7 @@ class JunctionPoint{
 
 
 
+	@Override
 	JunctionPoint clone(){
 		JunctionPoint n=new JunctionPoint(this.engine,this.junction,this.pos);
 		n.r_in=this.r_in;
